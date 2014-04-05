@@ -1,0 +1,21 @@
+business:
+*busi_name varchar 50
+rating int 2
+address varchar 100
+type varchar 30
+category varchar 30
+price range int 2
+open_hour varchar 100
+phone 
+picture varchar 200
+discription varchar 255
+
+review:
+*busi_name varchar 50
+*user_name varchar 50
+publish_time  varchar 30
+rating int 2
+price_range int 2
+title varchar 50
+comment text
+

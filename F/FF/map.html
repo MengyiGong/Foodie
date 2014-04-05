@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+ <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places,weather&language=en-us"></script>
+          
+  </script>
+<script type="text/javascript">
+var geocoder;
+var map;
+var query = "stevens institute of technology";
+
+// Create our "tiny" marker icon
+// var blueIcon = new GIcon(G_DEFAULT_ICON);
+// blueIcon.image = "http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png";
+
+function codeAddress() {
+  geocoder = new google.maps.Geocoder();
+  var myOptions = {
+   zoom: 17,
+   mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  var address = query;
+  geocoder.geocode({
+   'address': address
+  }, function(results, status) {
+   if (status == google.maps.GeocoderStatus.OK) {
+    map.setCenter(results[0].geometry.location);
+    var marker = new google.maps.Marker({
+     map: map,
+     position: results[0].geometry.location
+    });
+    var infowindow = new google.maps.InfoWindow({
+     content: address
+    });
+    infowindow.open(map, marker);
+   } else {
+    alert("Error reason: " + status);
+   }
+  });
+} 
+</script>
+</head>
+
+<body onload="codeAddress()">
+  <div id="map_canvas" style="width:300px; height:300px"></div>
+</body>

@@ -1,0 +1,49 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+
+.clear{
+	clear:both;
+}
+
+
+#rolling {
+	overflow:hidden;
+	width:800px;
+	height:100px;
+	margin:20px auto 0;
+}
+
+
+
+#rolling .show {
+	float: left;
+	width: 500%;
+}
+
+.pic{
+    float:left;
+}
+
+
+.block{
+	float:left;
+	width:200px;
+	height:100px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+.img{
+	float:left;
+	width:200px;
+	height:40px;
+	font:bold 28px ;
+	line-height:40px;
+}
+
+#foot_bm a,p,p a{font-size:12px;color:#666;}
+.card:hover{
+}
